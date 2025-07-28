@@ -125,7 +125,17 @@ const ContactSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className={`card-glass p-6 hover:shadow-glow-${method.color}/20 transition-all duration-500 group cursor-pointer`}
+                className={`card-glass p-6 transition-all duration-500 group cursor-pointer`}
+                style={{
+                  transition: 'all 0.5s ease',
+                }}
+                onMouseEnter={(e) => {
+                  const shadow = method.color === 'primary' ? 'var(--shadow-glow-primary)' : 'var(--shadow-glow-secondary)';
+                  e.currentTarget.style.boxShadow = `var(--shadow-card), ${shadow}`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-card)';
+                }}
                 onClick={() => method.href !== '#' && window.open(method.href, '_blank')}
               >
                 <div className="flex items-start gap-4">

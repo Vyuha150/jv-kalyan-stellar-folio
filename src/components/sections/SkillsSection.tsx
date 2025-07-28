@@ -128,7 +128,17 @@ const SkillsSection = () => {
             <motion.div
               key={category.title}
               variants={cardVariants}
-              className={`card-glass p-8 hover:shadow-glow-${category.color}/20 transition-all duration-500 group relative overflow-hidden`}
+              className={`card-glass p-8 transition-all duration-500 group relative overflow-hidden`}
+              style={{
+                transition: 'all 0.5s ease',
+              }}
+              onMouseEnter={(e) => {
+                const shadow = category.color === 'primary' ? 'var(--shadow-glow-primary)' : 'var(--shadow-glow-secondary)';
+                e.currentTarget.style.boxShadow = `var(--shadow-card), ${shadow}`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-card)';
+              }}
             >
               {/* Card Background Effect */}
               <div 

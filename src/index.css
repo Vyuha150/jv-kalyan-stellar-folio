@@ -188,8 +188,13 @@ All colors MUST be HSL.
 
   /* Cards */
   .card-glass {
-    @apply bg-card/50 backdrop-blur-md border border-border/50 rounded-2xl
-           shadow-card hover:shadow-glow-primary/20 transition-all duration-500;
+    @apply bg-card/50 backdrop-blur-md border border-border/50 rounded-2xl;
+    box-shadow: var(--shadow-card);
+    transition: all 0.5s ease;
+  }
+
+  .card-glass:hover {
+    box-shadow: var(--shadow-card), var(--shadow-glow-primary);
   }
 
   /* Navigation */
@@ -200,8 +205,12 @@ All colors MUST be HSL.
   .nav-item {
     @apply w-12 h-12 rounded-full bg-card/80 backdrop-blur-md 
            border border-border/50 flex items-center justify-center
-           hover:bg-primary/20 hover:border-primary/50 transition-all duration-300
            cursor-pointer;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item:hover {
+    @apply bg-primary/20 border-primary/50;
   }
 }
 

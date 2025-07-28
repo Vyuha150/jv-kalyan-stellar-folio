@@ -71,7 +71,16 @@ const AboutSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="card-glass p-6 text-center hover:shadow-glow-primary/10 transition-all duration-500"
+              className="card-glass p-6 text-center transition-all duration-500"
+              style={{
+                transition: 'all 0.5s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-card), var(--shadow-glow-primary)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-card)';
+              }}
             >
               <div className="text-primary mb-3 flex justify-center">
                 {stat.icon}
@@ -100,7 +109,16 @@ const AboutSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
-                className="card-glass p-8 hover:shadow-glow-primary/20 transition-all duration-500 group"
+                className="card-glass p-8 transition-all duration-500 group"
+                style={{
+                  transition: 'all 0.5s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-card), var(--shadow-glow-primary)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-card)';
+                }}
               >
                 <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
                   {card.icon}
