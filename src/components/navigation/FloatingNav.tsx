@@ -10,10 +10,13 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: 'home', icon: <Home size={20} />, label: 'Home', href: '#home' },
+  { id: 'home', icon: <Home size={20} />, label: 'Hero', href: '#home' },
   { id: 'about', icon: <User size={20} />, label: 'About', href: '#about' },
   { id: 'skills', icon: <Briefcase size={20} />, label: 'Skills', href: '#skills' },
   { id: 'achievements', icon: <Award size={20} />, label: 'Achievements', href: '#achievements' },
+  { id: 'experience', icon: '💼', label: 'Experience', href: '#experience' },
+  { id: 'media', icon: '🎥', label: 'Media', href: '#media' },
+  { id: 'resume', icon: '📄', label: 'Resume', href: '#resume' },
   { id: 'contact', icon: <Mail size={20} />, label: 'Contact', href: '#contact' },
 ];
 

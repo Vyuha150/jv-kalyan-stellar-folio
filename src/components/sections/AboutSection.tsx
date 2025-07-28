@@ -52,10 +52,47 @@ const AboutSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold font-display mb-6">
             About <span className="text-primary">J V Kalyan</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Strategist and public speaker building tech-enabled ecosystems for students and society. 
-            Passionate about empowering youth through innovation, leadership, and strategic thinking.
-          </p>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="card-glass p-2 inline-block">
+                <img 
+                  src="/lovable-uploads/783a5a45-55f5-4f93-a969-c1d55a50eac7.png" 
+                  alt="J V Kalyan - Casual portrait"
+                  className="rounded-lg w-full max-w-md mx-auto"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="space-y-6"
+            >
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                J V Kalyan is the founder of <strong className="text-primary">Vyuha</strong> – a student-led innovation movement based in Amaravathi. He specializes in consulting, AI strategy, and community empowerment. With <strong className="text-primary">1500+ students impacted</strong>, he bridges youth creativity with expert execution.
+              </p>
+              
+              <div className="flex flex-wrap gap-3">
+                {['#Leadership', '#Technology', '#PublicSpeaking', '#AI', '#CommunityBuilder'].map((tag, index) => (
+                  <motion.span
+                    key={tag}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20"
+                  >
+                    {tag}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Stats Grid */}

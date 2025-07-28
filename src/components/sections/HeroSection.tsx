@@ -36,7 +36,7 @@ const HeroSection = () => {
           >
             <span className="block text-foreground">J V</span>
             <span className="block bg-gradient-primary bg-clip-text text-transparent glow-text">
-              Kalyan
+              KALYAN
             </span>
           </motion.h1>
 
@@ -47,9 +47,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
           >
-            <span className="block mb-2">Crafting Strategies.</span>
-            <span className="block mb-2">Empowering Youth.</span>
-            <span className="block text-primary glow-text">Engineering Impact.</span>
+            <span className="block mb-2">Strategist | Technologist | Youth Leader</span>
           </motion.div>
 
           {/* Description */}
@@ -59,8 +57,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            Strategist, Technologist, and Public Leader building tech-enabled ecosystems 
-            for students and society. Founder of Vyuha with 1500+ members empowered.
+            Empowering minds through innovation & impact.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -91,9 +88,12 @@ const HeroSection = () => {
               </a>
             </Button>
 
-            <Button className="btn-secondary group">
+            <Button 
+              className="btn-secondary group"
+              onClick={() => document.getElementById('media')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Calendar size={20} />
-              Book as Speaker
+              Watch Leadership Talks
               <motion.div
                 className="opacity-0 group-hover:opacity-100 transition-opacity"
                 whileHover={{ scale: 1.1 }}
@@ -102,9 +102,8 @@ const HeroSection = () => {
               </motion.div>
             </Button>
 
-            <Button className="btn-outline group" onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
-              <Eye size={20} />
-              View Portfolio
+            <Button className="btn-outline group">
+              📄 View Resume
               <motion.div
                 className="opacity-0 group-hover:opacity-100 transition-opacity"
                 whileHover={{ y: -2 }}
