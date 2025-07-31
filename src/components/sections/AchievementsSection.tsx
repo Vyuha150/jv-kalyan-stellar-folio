@@ -10,27 +10,27 @@ const AchievementsSection = () => {
 
   const achievements = [
     {
-      image: "/lovable-uploads/74f430d5-8e2d-4be6-8fff-cdb0aa77c8c6.png",
-      title: "Community Outreach Program",
-      description: "Leading student engagement initiatives with community leaders and officials",
-      icon: <Users size={20} />,
-    },
-    {
-      image: "/lovable-uploads/2f095c44-3825-450f-93df-96413c20c8d3.png",
-      title: "Educational Mentorship",
-      description: "Mentoring sessions with renowned educators and knowledge sharing initiatives",
-      icon: <BookOpen size={20} />,
-    },
-    {
-      image: "/lovable-uploads/ec378be5-3472-4f11-a063-4b863707624f.png",
-      title: "Award of Excellence",
-      description: "Recognized by KLSAC for outstanding contributions to student affairs and leadership",
+      image: "/lovable-uploads/164345b8-1028-4af7-a957-a347aa2d7838.png",
+      title: "National Leadership Award",
+      description: "Recognized at national level for outstanding leadership and community impact",
       icon: <Award size={20} />,
     },
     {
-      image: "/lovable-uploads/a1dd36ac-440c-4b43-9dc3-662f860923d3.png",
-      title: "Public Speaking Excellence",
-      description: "Leading seminars and talks reaching 800+ participants in entrepreneurship programs",
+      image: "/lovable-uploads/891f5dee-ec79-4cc4-8cbc-0e75b345bbb5.png",
+      title: "Student Empowerment Initiative",
+      description: "Leading collaborative programs connecting students with academic and industry experts",
+      icon: <Users size={20} />,
+    },
+    {
+      image: "/lovable-uploads/af513be0-c5d4-4426-b783-1cdb8e3dfcd1.png",
+      title: "Community Impact at Scale",
+      description: "Organizing events that brought together thousands for social and educational initiatives",
+      icon: <BookOpen size={20} />,
+    },
+    {
+      image: "/lovable-uploads/36a177f7-a42b-4560-9f6a-f7c0031f7791.png",
+      title: "Electoral Education Leadership",
+      description: "Spearheading systematic voter education and democratic participation programs",
       icon: <Mic size={20} />,
     },
   ];

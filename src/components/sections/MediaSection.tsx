@@ -10,25 +10,36 @@ const MediaSection = () => {
 
   const mediaItems = [
     {
-      image: "/lovable-uploads/a1dd36ac-440c-4b43-9dc3-662f860923d3.png",
-      title: "Entrepreneurship Seminar",
-      description: "Leading seminars with 800+ participants, sharing insights on innovation and leadership",
-      type: "Speaking",
-      icon: <Mic size={20} />,
-    },
-    {
-      image: "/lovable-uploads/a79294f9-72f8-49c9-a09a-2174896866d6.png",
-      title: "Leadership Podcast",
-      description: "Discussing strategies for youth empowerment and community building",
+      image: "/lovable-uploads/9b07a4a2-48f6-452f-9c84-fbae4d7172ec.png",
+      title: "Podcast with Pemmasani Chandra Shekhar",
+      description: "Engaging conversation with Guntur MP on leadership and governance",
       type: "Podcast",
-      icon: <Camera size={20} />,
+      icon: <Mic size={20} />,
+      link: "https://youtu.be/sZ8u-TqG6Tw?si=fEWXtRAtEbibvDnM"
     },
     {
-      image: "/lovable-uploads/ec378be5-3472-4f11-a063-4b863707624f.png",
-      title: "Award Recognition",
-      description: "Receiving recognition for excellence in student affairs and leadership initiatives",
-      type: "Achievement",
+      image: "/lovable-uploads/36a177f7-a42b-4560-9f6a-f7c0031f7791.png",
+      title: "SWEEP Electoral Education Event",
+      description: "Speaking at systematic voters education and electoral participation program",
+      type: "Speaking",
+      icon: <Camera size={20} />,
+      link: "https://www.instagram.com/reel/C6FYmBNIEi_/?igsh=MTJ6dHM1aXVzZXJzbA=="
+    },
+    {
+      image: "/lovable-uploads/ff5d922c-4190-454f-b4a8-250dfd2100ec.png",
+      title: "Leadership Content Creation",
+      description: "Creating engaging content on youth empowerment and innovation",
+      type: "Content",
       icon: <Award size={20} />,
+      link: "https://www.instagram.com/reel/C62kktFrqyA/?igsh=MWxvbnp0djBnbjZ3cg=="
+    },
+    {
+      image: "/lovable-uploads/e9bb5b4a-5e48-47e1-8f41-452a858222d3.png",
+      title: "Panel Discussion Leadership",
+      description: "Leading strategic discussions on innovation and community development",
+      type: "Panel",
+      icon: <Mic size={20} />,
+      link: "https://www.instagram.com/reel/C6YvX4MNkwE/?igsh=MXYyYzM5dXhvZm5xaw=="
     },
   ];
 
@@ -51,14 +62,17 @@ const MediaSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {mediaItems.map((item, index) => (
-            <motion.div
+            <motion.a
               key={item.title}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="card-glass overflow-hidden group cursor-pointer"
+              className="card-glass overflow-hidden group cursor-pointer block"
               style={{
                 transition: 'all 0.5s ease',
               }}
@@ -94,7 +108,7 @@ const MediaSection = () => {
                   {item.description}
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
