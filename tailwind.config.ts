@@ -72,8 +72,9 @@ export default {
 				'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
 			},
 			fontFamily: {
-				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'display': ['Space Grotesk', 'Inter', 'sans-serif']
+				'sans': ['Poppins', 'system-ui', 'sans-serif'],
+				'display': ['Montserrat', 'Poppins', 'sans-serif'],
+				'body': ['Poppins', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

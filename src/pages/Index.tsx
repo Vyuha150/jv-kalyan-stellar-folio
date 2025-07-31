@@ -4,16 +4,16 @@ import SkillsSection from '@/components/sections/SkillsSection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import MediaSection from '@/components/sections/MediaSection';
-
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
-import FloatingNav from '@/components/navigation/FloatingNav';
+import HamburgerMenu from '@/components/navigation/HamburgerMenu';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Floating Navigation */}
-      <FloatingNav />
+    <div className="min-h-screen">
+      {/* Premium Navigation */}
+      <HamburgerMenu />
       
       {/* Main Content */}
       <main className="relative">
@@ -23,7 +23,7 @@ const Index = () => {
         <AchievementsSection />
         <ExperienceSection />
         <MediaSection />
-        
+        <TestimonialsSection />
         <ContactSection />
       </main>
       
