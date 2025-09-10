@@ -15,38 +15,6 @@ return (
       {/* Clean minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-background" />
       
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {/* Minimal floating achievement images */}
-        {[
-          '/lovable-uploads/783a5a45-55f5-4f93-a969-c1d55a50eac7.png',
-          '/lovable-uploads/af513be0-c5d4-4426-b783-1cdb8e3dfcd1.png',
-          '/lovable-uploads/e9bb5b4a-5e48-47e1-8f41-452a858222d3.png'
-        ].map((imageSrc, i) => (
-          <motion.div
-            key={i}
-            className="absolute opacity-20"
-            style={{
-              right: `${10 + i * 15}%`,
-              top: `${30 + i * 20}%`,
-              width: '60px',
-              height: '60px',
-            }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.1, scale: 1 }}
-            transition={{ duration: 2, delay: i * 0.5 }}
-          >
-            <div className="w-full h-full rounded-lg overflow-hidden">
-              <img
-                src={imageSrc}
-                alt={`Background achievement ${i + 1}`}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
-        ))}
-      </div>
 
       {/* Main Content Grid */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20">
@@ -160,23 +128,6 @@ return (
                     <p className="text-muted-foreground font-medium">Professional Photo</p>
                   </div>
                 </div>
-              </div>
-              
-              {/* Floating achievement images */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-xl overflow-hidden border-2 border-background shadow-lg">
-                <img
-                  src="/lovable-uploads/164345b8-1028-4af7-a957-a347aa2d7838.png"
-                  alt="Achievement highlight"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-xl overflow-hidden border-2 border-background shadow-lg">
-                <img
-                  src="/lovable-uploads/2f095c44-3825-450f-93df-96413c20c8d3.png"
-                  alt="Achievement highlight"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </motion.div>
