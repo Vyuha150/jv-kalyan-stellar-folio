@@ -7,13 +7,13 @@ import MediaSection from '@/components/sections/MediaSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
-import HamburgerMenu from '@/components/navigation/HamburgerMenu';
+import HorizontalNav from '@/components/navigation/HorizontalNav';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      {/* Premium Navigation */}
-      <HamburgerMenu />
+      {/* Horizontal Navigation */}
+      <HorizontalNav />
       
       {/* Main Content */}
       <main className="relative">

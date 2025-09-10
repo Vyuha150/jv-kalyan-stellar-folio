@@ -11,217 +11,183 @@ const HeroSection = () => {
   };
 
 return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/10">
-      {/* Clean Background with subtle pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_theme(colors.primary/0.05),_transparent_50%),radial-gradient(circle_at_80%_20%,_theme(colors.secondary/0.05),_transparent_50%)]" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-background">
+      {/* Clean minimal background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-background" />
       
-      {/* Animated Image Gallery */}
-      <div className="absolute inset-0 z-10 overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+        {/* Minimal floating achievement images */}
         {[
-          '/lovable-uploads/164345b8-1028-4af7-a957-a347aa2d7838.png',
-          '/lovable-uploads/2f095c44-3825-450f-93df-96413c20c8d3.png',
-          '/lovable-uploads/36a177f7-a42b-4560-9f6a-f7c0031f7791.png',
-          '/lovable-uploads/4824763f-1eb6-4a9a-83bd-0f9dfac722a9.png',
-          '/lovable-uploads/74f430d5-8e2d-4be6-8fff-cdb0aa77c8c6.png',
           '/lovable-uploads/783a5a45-55f5-4f93-a969-c1d55a50eac7.png',
-          '/lovable-uploads/891f5dee-ec79-4cc4-8cbc-0e75b345bbb5.png',
-          '/lovable-uploads/9b07a4a2-48f6-452f-9c84-fbae4d7172ec.png',
-          '/lovable-uploads/a1dd36ac-440c-4b43-9dc3-662f860923d3.png',
-          '/lovable-uploads/a79294f9-72f8-49c9-a09a-2174896866d6.png',
           '/lovable-uploads/af513be0-c5d4-4426-b783-1cdb8e3dfcd1.png',
-          '/lovable-uploads/e9bb5b4a-5e48-47e1-8f41-452a858222d3.png',
-          '/lovable-uploads/ec378be5-3472-4f11-a063-4b863707624f.png',
-          '/lovable-uploads/ff5d922c-4190-454f-b4a8-250dfd2100ec.png'
+          '/lovable-uploads/e9bb5b4a-5e48-47e1-8f41-452a858222d3.png'
         ].map((imageSrc, i) => (
           <motion.div
             key={i}
-            className="absolute"
+            className="absolute opacity-20"
             style={{
-              left: `${15 + (i % 4) * 20}%`,
-              top: `${20 + Math.floor(i / 4) * 25}%`,
-              width: '120px',
-              height: '120px',
+              right: `${10 + i * 15}%`,
+              top: `${30 + i * 20}%`,
+              width: '60px',
+              height: '60px',
             }}
-            initial={{ 
-              opacity: 0,
-              scale: 0,
-              rotate: Math.random() * 360,
-              x: Math.random() * 200 - 100,
-              y: Math.random() * 200 - 100
-            }}
-            animate={{
-              opacity: [0, 0.6, 0.4, 0.8, 0.3],
-              scale: [0, 1, 0.9, 1.1, 0.8],
-              rotate: [null, 15, -10, 5, 0],
-              x: [null, 20, -15, 10, 0],
-              y: [null, -20, 15, -10, 0]
-            }}
-            transition={{
-              duration: 12 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.8
-            }}
-            whileHover={{
-              scale: 1.3,
-              opacity: 0.9,
-              rotate: 0,
-              transition: { duration: 0.3 }
-            }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ duration: 2, delay: i * 0.5 }}
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden backdrop-blur-sm border border-primary/20 shadow-2xl group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 opacity-50" />
+            <div className="w-full h-full rounded-lg overflow-hidden">
               <img
                 src={imageSrc}
-                alt={`J V Kalyan Achievement ${i + 1}`}
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                alt={`Background achievement ${i + 1}`}
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-              <div className="absolute inset-0 ring-2 ring-primary/0 group-hover:ring-primary/50 transition-all duration-300 rounded-2xl" />
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Animated Particles */}
-      <div className="absolute inset-0 z-15">
-        {[...Array(8)].map((_, i) => (
+      {/* Main Content Grid */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-5rem)]">
+          
+          {/* Left Content */}
           <motion.div
-            key={i}
-            className={`absolute rounded-full ${
-              i % 3 === 0 ? 'w-1 h-1 bg-primary/60' : 
-              i % 3 === 1 ? 'w-2 h-2 bg-secondary/40' : 
-              'w-1.5 h-1.5 bg-accent/50'
-            }`}
-            initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              opacity: 0,
-              scale: 0
-            }}
-            animate={{
-              y: [null, -40, 40, -20, 0],
-              x: [null, 15, -15, 8, 0],
-              opacity: [0, 1, 0.7, 1, 0],
-              scale: [0, 1, 0.8, 1, 0]
-            }}
-            transition={{
-              duration: 10 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          {/* Premium Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Sparkles size={16} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Innovation Leader</span>
-          </motion.div>
-
-          {/* Main Title */}
-          <motion.h1 
-            className="text-7xl md:text-9xl font-black font-display mb-6 leading-none"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-          >
-            <motion.span 
-              className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
-              style={{
-                textShadow: '0 0 40px hsl(var(--primary) / 0.3)',
-              }}
+            {/* Premium Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20"
             >
-              J V KALYAN
-            </motion.span>
-          </motion.h1>
-          
-          {/* Professional Tagline */}
-          <motion.div 
-            className="text-2xl md:text-4xl mb-6 font-display font-medium"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <span className="text-foreground">Strategist</span>
-            <span className="text-muted-foreground mx-3">|</span>
-            <span className="text-primary">Technologist</span>
-            <span className="text-muted-foreground mx-3">|</span>
-            <span className="text-secondary">Youth Leader</span>
-          </motion.div>
-          
-          {/* Description */}
-          <motion.p 
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-          >
-            Empowering minds through <span className="text-primary font-medium">innovation</span> & <span className="text-secondary font-medium">impact</span>.
-          </motion.p>
-          
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-          >
-            <motion.a
-              href="https://www.linkedin.com/in/venkat-kalyan-4239ba21a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-primary-glow text-background font-semibold rounded-xl text-lg transition-all duration-300 overflow-hidden"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                boxShadow: 'var(--shadow-glow-primary)',
-              }}
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                <ExternalLink size={22} />
-                View LinkedIn
-              </span>
-            </motion.a>
+              <Sparkles size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">Innovation Leader</span>
+            </motion.div>
+
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <motion.h1 
+                className="text-5xl lg:text-7xl font-black font-display leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                  J V KALYAN
+                </span>
+              </motion.h1>
+              
+              <motion.div 
+                className="text-xl lg:text-2xl font-display font-medium text-muted-foreground"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <span className="text-foreground">Strategist</span>
+                <span className="mx-2">•</span>
+                <span className="text-primary">Technologist</span>
+                <span className="mx-2">•</span>
+                <span className="text-secondary">Youth Leader</span>
+              </motion.div>
+            </div>
             
-            <motion.button
-              onClick={() => {
-                const mediaSection = document.getElementById('media');
-                if (mediaSection) {
-                  mediaSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-card/50 backdrop-blur-md border-2 border-accent/30 text-foreground font-semibold rounded-xl text-lg hover:bg-accent/10 hover:border-accent transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Description */}
+            <motion.p 
+              className="text-lg text-muted-foreground leading-relaxed max-w-lg"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <Play size={22} />
-              Watch Leadership Talks
-            </motion.button>
+              Empowering minds through <span className="text-primary font-medium">innovation</span> and creating lasting <span className="text-secondary font-medium">impact</span> in technology and leadership.
+            </motion.p>
+            
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-wrap gap-4 pt-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <motion.a
+                href="https://www.linkedin.com/in/venkat-kalyan-4239ba21a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ExternalLink size={20} />
+                Connect on LinkedIn
+              </motion.a>
+              
+              <motion.button
+                onClick={() => {
+                  const aboutSection = document.getElementById('about');
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-border text-foreground font-semibold rounded-xl hover:bg-muted/50 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More
+              </motion.button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Right Content - Professional Image */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="relative max-w-md mx-auto lg:max-w-none">
+              {/* Main professional image placeholder */}
+              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 aspect-[4/5] border border-border/50">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <span className="text-4xl font-black text-primary">JVK</span>
+                    </div>
+                    <p className="text-muted-foreground font-medium">Professional Photo</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating achievement images */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-xl overflow-hidden border-2 border-background shadow-lg">
+                <img
+                  src="/lovable-uploads/164345b8-1028-4af7-a957-a347aa2d7838.png"
+                  alt="Achievement highlight"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-xl overflow-hidden border-2 border-background shadow-lg">
+                <img
+                  src="/lovable-uploads/2f095c44-3825-450f-93df-96413c20c8d3.png"
+                  alt="Achievement highlight"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
         
         {/* Enhanced Scroll Indicator */}
         <motion.div
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
           onClick={scrollToNext}
         >
           <motion.div
@@ -229,7 +195,7 @@ return (
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-sm mb-3 font-medium group-hover:text-primary">Explore More</span>
+            <span className="text-sm mb-3 font-medium group-hover:text-primary">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center group-hover:border-primary/50 transition-colors">
               <motion.div
                 className="w-1 h-3 bg-primary rounded-full mt-2"
