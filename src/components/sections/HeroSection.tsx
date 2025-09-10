@@ -46,22 +46,20 @@ return (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                   J V KALYAN
                 </span>
               </motion.h1>
               
               <motion.div 
-                className="text-xl lg:text-2xl font-display font-medium text-muted-foreground"
+                className="text-xl lg:text-2xl font-display font-medium"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <span className="text-foreground">Strategist</span>
-                <span className="mx-2">•</span>
-                <span className="text-primary">Technologist</span>
-                <span className="mx-2">•</span>
-                <span className="text-secondary">Youth Leader</span>
+                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                  Strategist • Technologist • Youth Leader
+                </span>
               </motion.div>
             </div>
             
@@ -118,16 +116,13 @@ return (
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative max-w-md mx-auto lg:max-w-none">
-              {/* Main professional image placeholder */}
-              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 aspect-[4/5] border border-border/50">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <span className="text-4xl font-black text-primary">JVK</span>
-                    </div>
-                    <p className="text-muted-foreground font-medium">Professional Photo</p>
-                  </div>
-                </div>
+              {/* Professional Photo */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-border/50 shadow-2xl">
+                <img
+                  src="/lovable-uploads/edf8c2c8-bb3a-4696-b89d-ddbd9bed20b2.png"
+                  alt="J V Kalyan - Professional Photo"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
