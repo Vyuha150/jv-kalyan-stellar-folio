@@ -10,18 +10,10 @@ const HeroSection = () => {
     }
   };
 
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
-        <MeshBackground />
-      </div>
-      
-      {/* Premium Gradient Overlay */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
-      </div>
+return (
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/10">
+      {/* Clean Background with subtle pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_theme(colors.primary/0.05),_transparent_50%),radial-gradient(circle_at_80%_20%,_theme(colors.secondary/0.05),_transparent_50%)]" />
       
       {/* Animated Image Gallery */}
       <div className="absolute inset-0 z-10 overflow-hidden">
