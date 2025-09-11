@@ -115,9 +115,9 @@ return (
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative max-w-md mx-auto lg:max-w-none">
+            <div className="relative max-w-xs mx-auto lg:max-w-sm">
               {/* Professional Photo */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-border/50 shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
                 <img
                   src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
                   alt="J V Kalyan - Professional Photo"
