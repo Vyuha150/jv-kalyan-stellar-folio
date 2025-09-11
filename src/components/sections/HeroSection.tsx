@@ -119,7 +119,7 @@ return (
               {/* Professional Photo */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-border/50 shadow-2xl">
                 <img
-                  src="/lovable-uploads/a1cf7775-6866-4887-8d65-7e9f3c4be38e.png"
+                  src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
                   alt="J V Kalyan - Professional Photo"
                   className="w-full h-full object-cover"
                 />
