@@ -110,20 +110,18 @@ return (
 
           {/* Right Content - Professional Image */}
           <motion.div
-            className="relative"
+            className="relative flex justify-center lg:justify-start"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative max-w-xs mx-auto lg:max-w-sm">
+            <div className="relative">
               {/* Professional Photo */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
-                <img
-                  src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
-                  alt="J V Kalyan - Professional Photo"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
+                alt="J V Kalyan - Professional Photo"
+                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-lg"
+              />
             </div>
           </motion.div>
         </div>
