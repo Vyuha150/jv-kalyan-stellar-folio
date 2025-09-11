@@ -17,8 +17,8 @@ return (
       
 
       {/* Main Content Grid */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-5rem)]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)]">
           
           {/* Left Content */}
           <motion.div
@@ -39,11 +39,11 @@ return (
             </motion.div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
+            <div className="space-y-4 sm:space-y-6">
               <motion.h1 
-                className="text-5xl lg:text-7xl font-black font-display leading-tight"
+                className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-tight"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
@@ -52,7 +52,7 @@ return (
               </motion.h1>
               
               <motion.div 
-                className="text-xl lg:text-2xl font-display font-medium"
+                className="text-lg sm:text-xl lg:text-2xl font-display font-medium"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -65,7 +65,7 @@ return (
             
             {/* Description */}
             <motion.p 
-              className="text-lg text-muted-foreground leading-relaxed max-w-lg"
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
@@ -75,7 +75,7 @@ return (
             
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
@@ -84,11 +84,11 @@ return (
                 href="https://www.linkedin.com/in/venkat-kalyan-4239ba21a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ExternalLink size={20} />
+                <ExternalLink size={18} className="sm:w-5 sm:h-5" />
                 Connect on LinkedIn
               </motion.a>
               
@@ -99,7 +99,7 @@ return (
                     aboutSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-border text-foreground font-semibold rounded-xl hover:bg-muted/50 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-border text-foreground font-semibold rounded-xl hover:bg-muted/50 transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -120,7 +120,7 @@ return (
               <img
                 src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
                 alt="J V Kalyan - Professional Photo"
-                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-lg"
+                className="w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full object-cover shadow-lg"
               />
             </div>
           </motion.div>
@@ -128,7 +128,7 @@ return (
         
         {/* Enhanced Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
@@ -139,11 +139,11 @@ return (
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-sm mb-3 font-medium group-hover:text-primary">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center group-hover:border-primary/50 transition-colors">
+            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium group-hover:text-primary">Scroll to explore</span>
+            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center group-hover:border-primary/50 transition-colors">
               <motion.div
-                className="w-1 h-3 bg-primary rounded-full mt-2"
-                animate={{ y: [0, 12, 0] }}
+                className="w-1 h-2 sm:h-3 bg-primary rounded-full mt-1.5 sm:mt-2"
+                animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
