@@ -120,7 +120,7 @@ return (
               <img
                 src="/lovable-uploads/7fc57a2b-c42d-41f1-952e-3c9859d8848c.png"
                 alt="J V Kalyan - Professional Photo"
-                className="w-48 h-48 sm:w-52 sm:h-52 lg:w-56 lg:h-56 rounded-full object-cover shadow-lg"
+                className="w-80 h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96 rounded-full object-cover shadow-lg"
               />
             </div>
           </motion.div>
