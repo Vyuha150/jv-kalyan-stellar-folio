@@ -16,7 +16,8 @@ const navItems: NavItem[] = [
   { id: 'experience', label: 'Experience', href: '#experience' },
   { id: 'achievements', label: 'Achievements', href: '#achievements' },
   { id: 'media', label: 'Media', href: '#media' },
-  { id: 'contact', label: 'Contact', href: '#contact' }
+  { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'admin', label: 'Admin', href: '/admin' }
 ];
 
 const HorizontalNav = () => {
@@ -46,9 +47,13 @@ const HorizontalNav = () => {
 
   const handleNavClick = (href: string, id: string) => {
     setActiveItem(id);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = href;
     }
   };
 
